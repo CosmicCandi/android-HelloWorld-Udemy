@@ -13,6 +13,7 @@
         android:layout_marginBottom="16dp"
         android:text="0"
         android:textAlignment="textStart"
+        android:textColor="@android:color/secondary_text_light"
         android:textSize="55sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_incrementPeopleCounter"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,5 +33,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499" />
+
+    <Button
+        android:id="@+id/btn_clearPassengerCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Clear Passenger Count"
+        android:textSize="20sp"
+        app:cornerRadius="5sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_incrementPeopleCounter"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
