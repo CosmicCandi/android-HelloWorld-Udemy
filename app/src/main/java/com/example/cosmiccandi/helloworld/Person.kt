@@ -1,5 +1,6 @@
 package com.example.cosmiccandi.helloworld
 
+import kotlin.random.Random
 import kotlin.reflect.typeOf
 
 fun main() {
@@ -13,6 +14,11 @@ fun main() {
     var kaleasPhone = MobilePhone()
     var heathersPhone = MobilePhone(brand="LG", model = "L555DL")
     var rikkisPhone = MobilePhone("iOS", "Apple", "iPhone Max 13")
+
+    kaleasPhone.battery.chargeBattery(55)
+    println("Previous battery Level ${kaleasPhone.battery.previousLevel}")
+    heathersPhone.battery.chargeBattery(30)
+    rikkisPhone.battery.chargeBattery(22)
 
     var myCar = Car()
     myCar.owner = kalea.firstName!!
@@ -48,10 +54,13 @@ class Person(_firstName: String = "John", _lastName: String = "Doe"){
     }
 }
 
-class MobilePhone(osName: String = "Android", brand: String = "Samsung", model: String = "Note 20 Ultra"){
+class MobilePhone(osName: String = "Android", brand: String = "Samsung", model: String = "Note 20 Ultra",
+        battery: Battery = Battery()){
+    var battery = battery
 
     init {
-        println("A new phone was created at the factory! Brand: $brand, Model: $model, OS: $osName")
+        this.battery = battery
+        println("A new phone was created at the factory! Brand: $brand, Model: $model, OS: $osName, Battery Level: ${this.battery.currentLevel}")
         if (osName == "iOS"){
             println("Oh, it's an Apple. Let's send it for immediate destruction!")
         }
